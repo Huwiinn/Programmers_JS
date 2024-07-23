@@ -2,9 +2,12 @@
 
 // 단, 알파벳 대문자와 소문자는 구분하지 않습니다.
 
+// 문제접근
+// 1. 알파벳 대문자와 소문자는 구분하지 않는 조건이 있기 때문에 소문자로 다 변경한다.
+// 2. includes 메서드를 이용하여 존재하는지 판별한다.
+
 function solution(myString, pat) {
-  var answer = 0;
-  return answer;
+  return myString.toLowerCase().includes(pat.toLowerCase()) ? 1 : 0;
 }
 
 solution("AbCdEfG", "aBc"); // 1
