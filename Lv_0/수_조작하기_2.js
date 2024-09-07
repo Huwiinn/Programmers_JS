@@ -8,35 +8,43 @@
 
 // 주어진 정수 배열 numLog에 대해 조작을 위해 입력받은 문자열을 return 하는 solution 함수를 완성해 주세요.
 
+// function solution(numLog) {
+//   const strArr = [];
+
+//   for (let i = 0; i < numLog.length; i++) {
+//     const difference = numLog[i] - numLog[i - 1]; // 이전 숫자와의 차이를 계산
+
+//     if (difference === 1) {
+//       strArr.push("w");
+//     } else if (difference === -1) {
+//       strArr.push("s");
+//     } else if (difference === 10) {
+//       strArr.push("d");
+//     } else if (difference === -10) {
+//       strArr.push("a");
+//     }
+//   }
+//   // console.log(strArr.join(""));
+//   return strArr.join("");
+// }
+
+// 다른 풀이
 function solution(numLog) {
-  const strArr = [];
+  const convert = {
+    1: "w",
+    "-1": "s",
+    10: "d",
+    "-10": "a",
+  };
 
-  for (let i = 0; i < numLog.length; i++) {
-    const difference = numLog[i] - numLog[i - 1]; // 이전 숫자와의 차이를 계산
+  console.log(convert[10]);
 
-    if (difference === 1) {
-      strArr.push("w");
-    } else if (difference === -1) {
-      strArr.push("s");
-    } else if (difference === 10) {
-      strArr.push("d");
-    } else if (difference === -10) {
-      strArr.push("a");
-    }
-  }
-  // console.log(strArr.join(""));
-  return strArr.join("");
+  return numLog
+    .slice(1) // 두 번째 수 부터
+    .map((v, i) => {
+      return convert[v - numLog[i]];
+    })
+    .join("");
 }
 
 solution([0, 1, 0, 10, 0, 1, 0, 10, 0, -1, -2, -1]); // "wsdawsdassw"
-
-// 다른 풀이
-// function solution(numLog) {
-//     const convert = {
-//         '1': 'w', '-1': 's', '10': 'd', '-10': 'a'
-//     };
-
-//     return numLog.slice(1).map((v, i) => {
-//         return convert[v - numLog[i]]
-//     }).join('')
-// }
