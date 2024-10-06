@@ -23,3 +23,4 @@ function solution(arr, flag) {
 solution([3, 2, 4, 1, 3], [true, false, true, false, false]); // [3, 3, 3, 3, 4, 4, 4, 4]
 
 // splice 메서드는 배열의 기존 요소를 삭제 또는 교체하거나 새 요소를 추가하여 배열의 내용을 변경한다.
+// https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
