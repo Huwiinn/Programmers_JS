@@ -8,6 +8,7 @@ function solution(myString, pat) {
     return "";
   }
 
+  console.log(myString.slice(0, findIdx + pat.length));
   return myString.slice(0, findIdx + pat.length);
 }
 
