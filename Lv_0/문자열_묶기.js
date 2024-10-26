@@ -19,3 +19,19 @@ function solution(strArr) {
 }
 
 solution(["a", "bc", "d", "efg", "hi"]); // 2
+
+// 리팩토링 코드
+
+// function solution(strArr) {
+//   let obj = {};
+
+//   for (let str of strArr) {
+//     obj[str.length] = obj[str.length] ?? [];  // `||` 대신 `??` 사용 가능
+//     obj[str.length].push(str);
+//   }
+
+//   const valuesArr = Object.values(obj).map((item) => item.length);
+//   const maxGroupSize = Math.max(...valuesArr);
+
+//   return maxGroupSize;
+// }
