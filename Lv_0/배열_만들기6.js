@@ -35,3 +35,19 @@ function solution(arr) {
 // solution([0, 1, 1, 1, 0]); // [0, 1, 0]
 // solution([0, 1, 0, 1, 0]); // [0, 1, 0, 1, 0]
 solution([0, 1, 1, 0]); // [-1]
+
+// 개선 코드
+// function solution(arr) {
+//   const stack = [];
+
+//   for (let i = 0; i < arr.length; i++) {
+//     const top = stack.at(-1); // 스택의 마지막 원소 참조
+//     if (!stack.length || top !== arr[i]) {
+//       stack.push(arr[i]); // 스택이 비었거나 다른 값이면 추가
+//     } else {
+//       stack.pop(); // 같은 값이면 제거
+//     }
+//   }
+
+//   return stack.length ? stack : [-1];
+// }
